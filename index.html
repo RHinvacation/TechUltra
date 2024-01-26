@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TechUltra资源网</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/header.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="TechUltra资源网.png" alt="TechUltra资源网"></a>
+        </div>
+
+        <button class="nav-toggle">导航</button>
+        <script>
+            //导航按钮功能实现
+            document.addEventListener('DOMContentLoaded', function () {
+                const navToggle = document.querySelector('.nav-toggle');
+                const header = document.querySelector('header');
+
+                navToggle.addEventListener('click', function () {
+                    header.classList.toggle('nav-open');
+                });
+            });
+        </script>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="#">软件开发</a>
+                    <ul>
+                        <li><a href="#" target="_blank">web前端</a>
+                            <ul>
+                                <li><a href="#" target="_blank">js作业导航</a></li>
+                                <li><a href="#" target="_blank">web前端实训</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" target="_blank">网络与数据库</a>
+                            <ul>
+                                <li><a href="#" target="_blank">mysql</a></li>
+                                <li><a href="#" target="_blank">PHP</a></li>
+                                <li><a href="#" target="_blank">网络与数据库实训</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">实用工具</a>
+                    <ul>
+                        <li><a href="https://chat.openai.com/" target="_blank">ChatGPT</a></li>
+                        <li><a href="https://www.ventoy.net/" target="_blank">Ventoy</a></li>
+                        <li><a href="https://www.spacedesk.net/" target="_blank">Spacedesk</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">玩机资源</a>
+                    <ul>
+                        <li><a href="https://mindows.cn/" target="_blank">Mindows工具箱</a></li>
+                        <li><a href="https://github.com/RHinvacation" target="_blank">GitHub</a></li>
+                    </ul>
+                </li>
+                <li><a href="About_us.html">关于我们</a></li>
+            </ul>
+        </nav>
+        <form>
+            <input type="text" placeholder="搜索结果">
+            <button type="submit">搜 索</button>
+        </form>
+
+        <div class="clock_action">
+            <a href="https://www.beijing-time.org/?eqid=ae8de387000921d50000000664845940" target="_blank">
+                <div id="clock-widget">
+                    <div id="clock"></div>
+                    <div id="date"></div>
+                </div>
+            </a>
+        </div>
+
+        <script>
+            function updateClock() {
+                var now = new Date();
+                var year = now.getFullYear();
+                var month = now.getMonth() + 1;
+                var day = now.getDate();
+                var dayOfWeek = now.getDay();
+                var hours = now.getHours();
+                var minutes = now.getMinutes();
+                var seconds = now.getSeconds();
+                var timeZone = now.getTimezoneOffset() / -60; // 获取时区偏移
+
+                // 添加前导零
+                month = (month < 10 ? "0" : "") + month;
+                day = (day < 10 ? "0" : "") + day;
+                hours = (hours < 10 ? "0" : "") + hours;
+                minutes = (minutes < 10 ? "0" : "") + minutes;
+                seconds = (seconds < 10 ? "0" : "") + seconds;
+
+                var time = hours + ":" + minutes + ":" + seconds;
+                var date = year + "-" + month + "-" + day + " " + getDayOfWeek(dayOfWeek) + " " + getTimeZone(timeZone);
+
+                document.getElementById("clock").textContent = time;
+                document.getElementById("date").textContent = date;
+            }
+
+            // 获取星期几的文本表示
+            function getDayOfWeek(day) {
+                var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                return daysOfWeek[day];
+            }
+
+            // 获取时区的文本表示
+            function getTimeZone(offset) {
+                var sign = offset >= 0 ? "+" : "-";
+                var hours = Math.floor(Math.abs(offset));
+                var minutes = Math.abs(offset % 1) * 60;
+                minutes = (minutes < 10 ? "0" : "") + minutes;
+                return "GMT " + sign + hours + ":" + minutes;
+            }
+
+            // 每秒钟更新一次时钟
+            setInterval(updateClock, 1000);
+
+            // 初始加载时调用一次以显示当前时间
+            updateClock();
+        </script>
+
+    </header>
+    <main>
+        这是一个 HTML 文档，代表了一个名为 "TechUltra资源网"（TechUltra 资源网）的网站页面。让我们来分析其结构和功能：
+
+### 结构：
+
+1. **页头部分：**
+   - 包含网站标志、导航切换按钮、导航菜单、搜索表单和时钟小部件。
+   - 使用媒体查询为不同的屏幕尺寸样式化页头。
+
+2. **导航菜单：**
+   - 包含到网站各个部分的链接列表。
+   - 具有多级嵌套列表，用于创建子菜单。
+
+3. **搜索表单：**
+   - 允许用户输入搜索查询并提交。
+
+4. **时钟小部件：**
+   - 显示当前时间和日期，带有一个指向时区网站的链接。
+   - 使用 JavaScript 每秒更新一次时钟。
+
+### 功能：
+
+- **响应式设计：**
+  - 页面布局根据屏幕尺寸使用媒体查询进行调整，针对小屏幕（最大宽度为 767px）、中等屏幕（最小宽度为 768px，最大宽度为 991px）和大屏幕（最小宽度为 992px）采用不同的样式。
+  - 为每个屏幕尺寸应用不同的样式，确保响应式布局。
+
+- **导航切换按钮：**
+  - 允许用户在小屏幕上切换导航菜单的可见性。
+
+- **时钟小部件：**
+  - 显示当前时间和日期。
+  - 使用 JavaScript 实时更新。
+
+- **搜索表单：**
+  - 允许用户输入搜索查询。
+  - 用户点击 "搜索" 按钮后提交搜索查询。
+
+### 样式：
+
+- 使用 CSS 对元素进行样式化，如页头、导航菜单、搜索表单和时钟小部件。
+- 针对不同的屏幕尺寸应用不同的样式，确保响应式布局。
+
+### JavaScript：
+
+- 使用 JavaScript 切换导航菜单的可见性，并实时更新时钟小部件。
+
+总的来说，这个 HTML 文档代表了一个响应式网页，用于一个专注于技术资源的网站，具有导航、搜索和时钟功能。
+    </main>
+    <footer>
+        <p>
+            <span>版权所有©2024 TechUltra资源网</span>
+            <span><a href="">回到顶部</a></span>
+        </p>
+        <ul>
+            <li><a href="About_us.html">关于我们</a></li>
+            <li>|</li>
+            <li><a href="#">友情链接</a></li>
+            <li>|</li>
+            <li><a href="#">隐私与安全</a></li>
+            <li>|</li>
+            <li><a href="#">法律声明</a></li>
+            <li>|</li>
+            <li><a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">备案号</a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>

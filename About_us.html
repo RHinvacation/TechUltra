@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TechUltra资源网</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/header.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="TechUltra资源网.png" alt="TechUltra资源网"></a>
+        </div>
+
+        <button class="nav-toggle">导航</button>
+        <script>
+            //导航按钮功能实现
+            document.addEventListener('DOMContentLoaded', function () {
+                const navToggle = document.querySelector('.nav-toggle');
+                const header = document.querySelector('header');
+
+                navToggle.addEventListener('click', function () {
+                    header.classList.toggle('nav-open');
+                });
+            });
+        </script>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="#">软件开发</a>
+                    <ul>
+                        <li><a href="#" target="_blank">web前端</a>
+                            <ul>
+                                <li><a href="#" target="_blank">js作业导航</a></li>
+                                <li><a href="#" target="_blank">web前端实训</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" target="_blank">网络与数据库</a>
+                            <ul>
+                                <li><a href="#" target="_blank">mysql</a></li>
+                                <li><a href="#" target="_blank">PHP</a></li>
+                                <li><a href="#" target="_blank">网络与数据库实训</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">实用工具</a>
+                    <ul>
+                        <li><a href="https://chat.openai.com/" target="_blank">ChatGPT</a></li>
+                        <li><a href="https://www.ventoy.net/" target="_blank">Ventoy</a></li>
+                        <li><a href="https://www.spacedesk.net/" target="_blank">Spacedesk</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">玩机资源</a>
+                    <ul>
+                        <li><a href="https://mindows.cn/" target="_blank">Mindows工具箱</a></li>
+                        <li><a href="https://github.com/RHinvacation" target="_blank">GitHub</a></li>
+                    </ul>
+                </li>
+                <li><a href="About_us.html">关于我们</a></li>
+            </ul>
+        </nav>
+        <form>
+            <input type="text" placeholder="搜索结果">
+            <button type="submit">搜 索</button>
+        </form>
+
+        <div class="clock_action">
+            <a href="https://www.beijing-time.org/?eqid=ae8de387000921d50000000664845940" target="_blank">
+                <div id="clock-widget">
+                    <div id="clock"></div>
+                    <div id="date"></div>
+                </div>
+            </a>
+        </div>
+
+        <script>
+            function updateClock() {
+                var now = new Date();
+                var year = now.getFullYear();
+                var month = now.getMonth() + 1;
+                var day = now.getDate();
+                var dayOfWeek = now.getDay();
+                var hours = now.getHours();
+                var minutes = now.getMinutes();
+                var seconds = now.getSeconds();
+                var timeZone = now.getTimezoneOffset() / -60; // 获取时区偏移
+
+                // 添加前导零
+                month = (month < 10 ? "0" : "") + month;
+                day = (day < 10 ? "0" : "") + day;
+                hours = (hours < 10 ? "0" : "") + hours;
+                minutes = (minutes < 10 ? "0" : "") + minutes;
+                seconds = (seconds < 10 ? "0" : "") + seconds;
+
+                var time = hours + ":" + minutes + ":" + seconds;
+                var date = year + "-" + month + "-" + day + " " + getDayOfWeek(dayOfWeek) + " " + getTimeZone(timeZone);
+
+                document.getElementById("clock").textContent = time;
+                document.getElementById("date").textContent = date;
+            }
+
+            // 获取星期几的文本表示
+            function getDayOfWeek(day) {
+                var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                return daysOfWeek[day];
+            }
+
+            // 获取时区的文本表示
+            function getTimeZone(offset) {
+                var sign = offset >= 0 ? "+" : "-";
+                var hours = Math.floor(Math.abs(offset));
+                var minutes = Math.abs(offset % 1) * 60;
+                minutes = (minutes < 10 ? "0" : "") + minutes;
+                return "GMT " + sign + hours + ":" + minutes;
+            }
+
+            // 每秒钟更新一次时钟
+            setInterval(updateClock, 1000);
+
+            // 初始加载时调用一次以显示当前时间
+            updateClock();
+        </script>
+
+    </header>
+    <main>
+        <h1>关于我们</h1>
+        <div class="contenter">
+            <section>
+                <p>欢迎来到TechUltra资源网！</p>
+                <p>我们是一家专注于资源分享的社区，致力于为广大科技爱好者和技术从业者提供优质的技术资源、工具和信息。无论您是正在学习编程、开发软件，还是寻找实用工具和玩机资源，我们都致力于为您提供最新、最全面的内容。
+                </p>
+                <h4>我们的使命</h4>
+                <p>我们的使命是通过分享知识和资源，帮助更多的人掌握技术，实现个人和职业发展。在这里，您可以找到各种编程语言的教程、开发工具的评测、网络技术的讨论，以及最新的科技资讯，助您在科技领域保持领先。</p>
+                <h4>我们的价值观</h4>
+                <p>- 分享与合作： 我们相信分享知识和资源可以促进技术进步，我们欢迎各种形式的合作和贡献，共同打造一个资源丰富的社区。</p>
+                <p>- 创新与探索： 我们鼓励创新思维和技术探索，希望成为您探索新技术、新工具的指南和平台。</p>
+                <p>- 开放与包容： 我们欢迎来自不同背景和经验的人士加入我们的社区，共同分享、学习和成长。</p>
+                <h4>我们提供的服务</h4>
+                <p>- 技术资源分享： 提供各种技术领域的资源和教程，包括编程语言、开发工具、网络技术等。</p>
+                <p>- 实用工具推荐： 评测和推荐各种实用工具和软件，帮助您提高工作效率和技术能力。</p>
+                <p>- 玩机资源分享： 分享各种玩机技巧、工具和资源，帮助您发现更多有趣的科技玩法。</p>
+                <p>无论您是初学者还是资深技术从业者，我们都希望能够为您提供有价值的内容和帮助，让您在科技领域不断进步和成长。感谢您选择加入我们的社区，期待与您一起分享和成长！</p>
+            </section>
+            <section>
+                <h4>联系我们</h4>
+                <li>邮箱：<a href="mailto:info@TechUltra.com">info@TechUltra.com</a></li>
+                <li>电话：<a href="tel:012-12345678">012-12345678</a></li>
+                <li>地址：<a
+                        href="https://map.baidu.com/poi/%E6%95%85%E5%AE%AB%E5%8D%9A%E7%89%A9%E9%99%A2/@12958109.638731202,4827369.060118709,16.88z?uid=06d2dffda107b0ef89f15db6&ugc_type=3&ugc_ver=1&device_ratio=1&compat=1&pcevaname=pc4.1&querytype=detailConInfo&da_src=shareurl"
+                        target="_blank">江河市复兴区复兴大道095号</a></li>
+            </section>
+
+        </div>
+    </main>
+    <footer>
+        <p>
+            <span>版权所有©2024 TechUltra资源网</span>
+            <span><a href="">回到顶部</a></span>
+        </p>
+        <ul>
+            <li><a href="About_us.html">关于我们</a></li>
+            <li>|</li>
+            <li><a href="#">友情链接</a></li>
+            <li>|</li>
+            <li><a href="#">隐私与安全</a></li>
+            <li>|</li>
+            <li><a href="#">法律声明</a></li>
+            <li>|</li>
+            <li><a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">备案号</a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>

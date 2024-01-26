@@ -1,0 +1,12 @@
+/* body {
+	font-family: "宋体";
+} */
+main{
+	font-family: "宋体";
+	margin-top: 10%;
+	margin-bottom: 3%;
+	/* text-indent: 2rem; */
+}
+a {
+	text-decoration: none;
+}
